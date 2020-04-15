@@ -83,3 +83,7 @@ def handler(event=None,context=None):
     tb_name=upload_to_dynamodb(rand_tick)
     best,names=get_best(tb_name)
     return 'Among all these stocks you pick: {}, the best one is {}, because this stock has the highest increase between Close price and Open Price, which is {}'.format(names,list(best.keys())[0],list(best.values())[0])
+if __name__ == "__main__":
+   
+    handler()
+    
