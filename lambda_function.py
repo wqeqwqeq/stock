@@ -32,7 +32,7 @@ def scrape(ticker):
         return {"error":"Failed to parse json response"}
 
 def upload_to_dynamodb(ticker_lst):
-    db=boto3.resource('dynamodb')
+    db=boto3.resource('dynamodb',region_name='us-east-1')
     date=datetime.today().strftime('%Y_%m_%d')
     tb_name='stock_{}'.format(date)
     table = db.create_table(
@@ -62,7 +62,7 @@ def upload_to_dynamodb(ticker_lst):
     return tb_name
 
 def get_best(tb_name):
-    db=boto3.resource('dynamodb')
+    db=boto3.resource('dynamodb',region_name='us-east-1')
     table=db.Table(tb_name)
     all_stock=table.scan()['Items']
     names=[i['name'] for i in all_stock]
