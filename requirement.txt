@@ -1,0 +1,4 @@
+lxml==4.3.2
+boto3==1.12.7
+datetime==4.3.0
+requests==2.21.0
